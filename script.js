@@ -1,5 +1,6 @@
 let choices = ['rock', 'paper', 'scissors']
 let playerChoice, compChoice;
+playerChoice = 'rock'
 
 function getComputerChoice() {
     x = Math.floor(Math.random()*3);
@@ -9,7 +10,7 @@ function getComputerChoice() {
 
 function rspRound (compChoice, playerChoice) {
     x = compChoice
-    y = toLowerCase(playerChoice)
+    y = playerChoice.toLowerCase()
     
     if (x == y){
         return 'It\'s a tie'
@@ -31,5 +32,12 @@ function rspRound (compChoice, playerChoice) {
     }
     else if (x == choices[2] && y == choices[1]) { //scissors vs paper
         return 'Computer wins'
+    }
+}
+
+function game (){
+    for (let i = 0; i<5; i++){
+        playerChoice = prompt("Choose your fighter")
+        alert(rspRound(getComputerChoice(),playerChoice))
     }
 }
